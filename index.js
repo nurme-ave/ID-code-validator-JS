@@ -20,10 +20,8 @@ userInput.addEventListener('keydown', (e) => {
     e.preventDefault();
     if (!userInput.value) {
       result.textContent = '';
-      result2.textContent = '';
     } else {
-      result.textContent = 'The validation result will be displayed here.';
-      result2.textContent = `User input: ${userInput.value}`;
+      result.textContent = 'Your ID-code is valid.';
     }
   }
 });

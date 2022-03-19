@@ -71,7 +71,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .form input {
@@ -101,11 +101,6 @@ body {
 }
 
 .result {
-  font-size: 2rem;
-}
-
-.result2 {
-  display: block;
   font-size: 2rem;
 }
 
@@ -204,7 +199,7 @@ footer a {
   .section-container {
     justify-content: flex-start;
     align-items: center;
-    width: 85%;
+    width: 80%;
   }
 
   .note-lg {
@@ -222,10 +217,11 @@ footer a {
     margin: 1em 0 1.25em;
   }
 
-  .result, .result2 {
+  .result {
+    font-size: 1.5rem;
     text-align: center;
   }
-
+  
   .section-container-est-id-code {
     height: auto;
   }

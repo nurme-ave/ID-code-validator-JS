@@ -13,10 +13,12 @@ body {
 
 .main-container {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background: url('./images/robot_1920.jpg') no-repeat center/cover;
 }
 
+
+/* Navigation Bar */
 .nav-bar {
   position: relative;
   display: flex;
@@ -26,6 +28,7 @@ body {
   width: 100%;
   min-height: 10vh;
   background-color: #fff;
+  margin: auto;
 }
 
 .nav-bar-toggle-button div {
@@ -57,18 +60,17 @@ body {
   top: 10vh;
   right: 0;
   width: 100%;
-  padding: 3vh 0;
-  /* transform: translateX(100%); */
+  padding: 3vh 0 7vh;
   background-color: #fff;
+  z-index: 100;
 }
 
 .nav-menu-item {
   list-style: none;
-  padding: .25em 1.5em .25em 0;
+  padding: .75em 1.5em;
   text-align: right;
   font-size: 1.4rem;
   font-weight: 500;
-  /* opacity: 0; */
 }
 
 .nav-menu-item a {
@@ -85,6 +87,112 @@ body {
   margin-left: 1em;
 }
 
+.rotate-lines .line1 {
+  transform: rotate(-45deg) translate(-0.2em, 0.2em);
+}
+
+.rotate-lines .line2 {
+  opacity: 0;
+}
+
+.rotate-lines .line3 {
+  transform: rotate(45deg) translate(-0.2em, -0.25em);
+}
+
+
+/* Section */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  gap: 1em;
+}
+
+.validator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  width: 10em;
+  height: 3em;
+  margin: 1em 0.5em 0.5em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-size: 2rem;
+  text-align: center;
+  border: none;
+  cursor: text;
+}
+
+.form input:focus::placeholder {
+  color: transparent;
+}
+
+/* Hide the spin-button inside input */
+.form input[type=number]::-webkit-inner-spin-button,
+.form input[type=number]::-webkit-outer-spin-button {
+  display: none;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.display-result {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.note-lg {
+  display: none;
+}
+
+.note-sm {
+  margin-top: 1.5em;
+  font-size: 1.5em;
+}
+
+hr {
+  width: 100%;
+}
+
+.est-id-code-heading {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.est-id-code-intro-text {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 1em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: blue;
+  font-size: 1rem;
+  padding: 0.25em;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
@@ -96,6 +204,8 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    width: 80%;
+    border-radius: 0 0 0.5em 0.5em;
   }
 
   .nav-menu {
@@ -105,6 +215,15 @@ body {
 
   .nav-menu-item {
     padding: 0 1.5em;
-    opacity: 1;
+  }
+
+  .note-lg {
+    display: inline-block;
+    margin-left: 1em;
+    font-size: 2rem;
+  }
+
+  .note-sm {
+    display: none;
   }
 }

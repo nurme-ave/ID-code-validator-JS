@@ -25,7 +25,7 @@ userInput.addEventListener('keydown', (e) => {
     if (!userInput.value) {
       displayResult.textContent = '';
     } else {
-      displayResult.textContent = '>>> Validation result here <<<';
+      displayResult.textContent = '>>> Result here <<<';
     }
   }
 });

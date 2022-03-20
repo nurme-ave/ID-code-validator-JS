@@ -5,13 +5,11 @@ const navMenuItems = document.querySelectorAll('.nav-menu-item')
 
 navBarToggleButton.addEventListener('click', () => {
   navMenu.classList.toggle('show')
-  navBarToggleButton.classList.toggle('rotate')
 })
 
 /* Hide menu when clicked on the nav item */
 function clickOnNavItem() {
   navMenu.classList.remove('show')
-  navBarToggleButton.classList.toggle('rotate')
 }
 navMenuItems.forEach((item) => item.addEventListener('click', clickOnNavItem))
 

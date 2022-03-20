@@ -18,222 +18,93 @@ body {
 }
 
 .nav-bar {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  height: 10vh;
-  margin: auto;
-  padding: 0 0.75em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 10vh;
   background-color: #fff;
-  border-radius: 0 0 0.5em 0.5em;
-  font-size: 1.4rem;
+}
+
+.nav-bar-toggle-button div {
+  width: 1em;
+  height: 0.15em;
+  margin: 0.15em;
+  background-color: #000;
+}
+
+.nav-bar-toggle-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 1.875rem;
+  margin-right: 1em;
 }
 
 .nav-menu {
-  list-style-type: none;
+  display: none;
+}
+
+.nav-menu.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  width: 100%;
+  padding: 3vh 0;
+  /* transform: translateX(100%); */
+  background-color: #fff;
 }
 
 .nav-menu-item {
-  display: inline-block;
+  list-style: none;
+  padding: .25em 1.5em .25em 0;
+  text-align: right;
+  font-size: 1.4rem;
   font-weight: 500;
+  /* opacity: 0; */
 }
 
-.nav-menu-item a:hover, .logo a:hover {
-  color: blue;
-}
-
-.nav-menu-item a, .logo a {
+.nav-menu-item a {
   text-decoration: none;
-  padding: 0.75em;
   color: #000;
-}
-
-.nav-menu-toggle-button {
-  display: none;
 }
 
 .logo {
-  font-weight: 500;
-  font-size: 2rem;
-}
-
-.logo-robot {
-  color: #000;
-  margin-right: 0.5em;
-}
-
-.section-container {
-  height: 90vh;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 0 auto;
-}
-
-.validator {
-  height: 30vh;
-}
-
-.est-id-code {
-  height: 25vh;
-}
-
-.form input {
-  width: 10em;
-  height: 3em;
-  margin: 2em 0 1.25em;
-  padding: 0.5em;
-  border-radius: 0.5em;
-  font-size: 2rem;
-  text-align: center;
-  border: none;
-  cursor: text;
-}
-
-.form input:focus::placeholder {
-  color: transparent;
-}
-
-/* Hide the spin-button inside input */
-.form input[type=number]::-webkit-inner-spin-button,
-.form input[type=number]::-webkit-outer-spin-button {
-  display: none;
-}
-
-.form input:focus {
-  outline: none;
-}
-
-.display-result {
-  font-size: 2rem;
-}
-
-.note-lg {
-  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.875rem;
   margin-left: 1em;
-  font-size: 2rem;
-}
-
-.note-sm {
-  display: none;
-}
-
-.est-id-code-heading {
-  margin: 2em 0 1em;
-}
-
-.est-id-code-intro-text {
-  width: 55%;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  color: #000;
-}
-/* 
-.back-to-top-chevron {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 5vh;
-  color: #000;
-  font-size: 4rem;
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-
-.back-to-top-chevron:hover {
-  color: blue;
-} */
-
-footer {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  width: 100%;
-  height: 5vh;
-}
-
-footer a {
-  text-decoration: none;
-  color: blue;
 }
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 424.98px) {
-  .section-container {
-    height: auto;
-    align-items: center;
+@media screen and (min-width: 768px) {
+  .nav-bar-toggle-button {
+    display: none;
   }
 
   .nav-bar {
-    width: 100%;
-    border-radius: 0;
-    padding: 0 1.6em;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .nav-menu {
-    display: none;
+    display: flex;
+    flex-direction: row;
   }
 
-  .nav-menu-toggle-button {
-    display: block;
-    background-color: transparent;
-    border: 0;
-    font-size: 1.875rem; 
-    cursor: pointer;
-    /* display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    */
-    -webkit-tap-highlight-color: transparent; /* sets the color of the highlight that appears over a link while it's being tapped */
+  .nav-menu-item {
+    padding: 0 1.5em;
+    opacity: 1;
   }
-  
-  .nav-menu-toggle-icon {
-    transition: 0.5s ease-in-out;
-    color: var(--nav-menu-toggle-icon);
-    margin: 0.25em;
-  }
-
-  .logo {
-    font-size: 1.875rem;
-  }
-
-  .logo a {
-    padding: 0;
-  }
-
-  .note-lg {
-    display: none;
-  }
-
-  .note-sm {
-    display: block;
-    margin-top: 1.2em;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .form input {
-    width: 8.5em;
-    margin: 1em 0 1.25em;
-  }
-
-  .display-result {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
- .est-id-code {
-    height: auto;
-    text-align: center;
-  }
-
-  .est-id-code-intro-text {
-    width: 100%;
-  } 
 }

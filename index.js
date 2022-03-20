@@ -1,19 +1,19 @@
 /* Hamburger Menu */
-const menuToggleButton = document.querySelector('.nav-menu-toggle-button')
+const navBarToggleButton = document.querySelector('.nav-bar-toggle-button')
 const navMenu = document.querySelector('.nav-menu')
-const navItems = document.querySelectorAll('.nav-menu-item')
+const navMenuItems = document.querySelectorAll('.nav-menu-item')
 
-menuToggleButton.addEventListener('click', () => {
+navBarToggleButton.addEventListener('click', () => {
   navMenu.classList.toggle('show')
-  menuToggleButton.classList.toggle('rotate')
+  navBarToggleButton.classList.toggle('rotate')
 })
 
 /* Hide menu when clicked on the nav item */
 function clickOnNavItem() {
   navMenu.classList.remove('show')
-  menuToggleButton.classList.toggle('rotate')
+  navBarToggleButton.classList.toggle('rotate')
 }
-navItems.forEach((item) => item.addEventListener('click', clickOnNavItem))
+navMenuItems.forEach((item) => item.addEventListener('click', clickOnNavItem))
 
 
 /* User Input & Display Results */

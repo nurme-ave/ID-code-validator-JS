@@ -25,7 +25,7 @@ userInput.addEventListener('keydown', (e) => {
     if (!userInput.value) {
       displayResult.textContent = '';
     } else {
-      displayResult.textContent = 'Your ID-code is valid.';
+      displayResult.textContent = '>>> Validation result here <<<';
     }
   }
 });

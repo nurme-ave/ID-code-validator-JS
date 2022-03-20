@@ -25,7 +25,7 @@ userInput.addEventListener('keydown', (e) => {
     if (!userInput.value) {
       displayResult.textContent = '';
     } else {
-      displayResult.textContent = '>>> Result here <<<';
+      displayResult.textContent = '>>> Result will be displayed here';
     }
   }
 });

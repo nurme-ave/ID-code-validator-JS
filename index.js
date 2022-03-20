@@ -1,27 +1,32 @@
 /* Hamburger Menu */
 const menuToggleButton = document.querySelector('.nav-menu-toggle-button')
 const navMenu = document.querySelector('.nav-menu')
-const menuToggleIcon = document.querySelector('.nav-menu-toggle-icon')
-const navItems = document.querySelectorAll('.nav-item')
+const navItems = document.querySelectorAll('.nav-menu-item')
 
 menuToggleButton.addEventListener('click', () => {
   navMenu.classList.toggle('show')
-  menuToggleIcon.classList.toggle('rotate')
+  menuToggleButton.classList.toggle('rotate')
 })
+
+/* Hide menu when clicked on the nav item */
+function clickOnNavItem() {
+  navMenu.classList.remove('show')
+  menuToggleButton.classList.toggle('rotate')
+}
+navItems.forEach((item) => item.addEventListener('click', clickOnNavItem))
 
 
 /* User Input & Display Results */
-const userInput = document.getElementById('user-input');
-const result = document.querySelector('.result');
-const result2 = document.querySelector('.result2');
+// const userInput = document.getElementById('user-input');
+// const displayResult = document.querySelector('.display-result');
 
-userInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    if (!userInput.value) {
-      result.textContent = '';
-    } else {
-      result.textContent = 'Your ID-code is valid.';
-    }
-  }
-});
+// userInput.addEventListener('keydown', (e) => {
+//   if (e.key === 'Enter') {
+//     e.preventDefault();
+//     if (!userInput.value) {
+//       displayResult.textContent = '';
+//     } else {
+//       displayResult.textContent = 'Your ID-code is valid.';
+//     }
+//   }
+// });

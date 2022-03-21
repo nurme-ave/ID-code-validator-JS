@@ -240,6 +240,10 @@ footer a {
   .nav-menu-item {
     padding: .75em 2.75em;
   }
+
+  .display-result {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -272,6 +276,10 @@ footer a {
   .est-id-code {
     width: 50%;
     height: 45vh;
+  }
+
+  #user-input {
+    margin-bottom: .75em;
   }
 
   hr {

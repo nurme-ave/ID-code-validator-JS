@@ -260,10 +260,6 @@ footer a {
     height: 25vh;
   }
 
-  /* #user-input {
-    margin: 0;
-  } */
-
   .display-result {
     display: flex;
     justify-content: flex-start;
@@ -315,6 +311,10 @@ footer a {
   .logo {
     margin-left: 1em;
   }
+
+  .est-id-code-intro-text > p {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -324,5 +324,12 @@ footer a {
   
   .est-id-code-intro-text > p {
     width: 50ch;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .est-id-code-intro-text > p {
+    font-size: 1.4rem;
   }
 }

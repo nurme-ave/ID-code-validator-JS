@@ -45,6 +45,7 @@ body {
   transform: translateY(-50%);
   font-size: 1.875rem;
   margin-right: 1em;
+  cursor: pointer;
 }
 
 .nav-menu {

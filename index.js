@@ -40,13 +40,13 @@ function isValidIdCode(idCode) {
   const validBornOrder = isValidBornOrder(idCode);
   const validChecksum = isValidChecksum(idCode);
 
-  console.log(length);
-  console.log(genderNumber);
-  console.log(validYear);
-  console.log(validMonthNumber);
-  console.log(validDate);
-  console.log(validBornOrder);
-  console.log(validChecksum);
+  // console.log(length);
+  // console.log(genderNumber);
+  // console.log(validYear);
+  // console.log(validMonthNumber);
+  // console.log(validDate);
+  // console.log(validBornOrder);
+  // console.log(validChecksum);
 
   // console.log(convertToFullYear(idCode));
   // console.log(isLeapYear(idCode));
@@ -85,18 +85,25 @@ function isValidMonthNumber(idCode) {
   return 0 < +idCode.slice(3, 5) && +idCode.slice(3, 5) <= 12;
 }
 
-function convertToFullYear(idCode) {
+// function convertToFullYear(idCode) {
+//   let fullYear;
+//   if (+idCode[0] === 3 || +idCode[0] === 4) {
+//     fullYear = `19${idCode.slice(1, 3)}`;
+//   } else if (+idCode[0] === 5 || +idCode[0] === 6) {
+//     fullYear = `20${idCode.slice(1, 3)}`;
+//   }
+//   return +fullYear;
+// }
+
+function isLeapYear(idCode) {
   let fullYear;
+
   if (+idCode[0] === 3 || +idCode[0] === 4) {
     fullYear = `19${idCode.slice(1, 3)}`;
   } else if (+idCode[0] === 5 || +idCode[0] === 6) {
     fullYear = `20${idCode.slice(1, 3)}`;
   }
-  return +fullYear;
-}
 
-function isLeapYear(idCode) {
-  fullYear = convertToFullYear(idCode);
   return fullYear % 400 == 0 || (fullYear % 4 == 0 && fullYear % 100 != 0);
 }
 
@@ -108,7 +115,7 @@ function isValidDate(idCode) {
 
   if (monthNumber === 2 && date <= 28) {
     return true;
-  } else if (monthNumber === 2 && isLeapYear(idCode) && date <= 29) {
+  } else if (monthNumber === 2 && isLeapYear(idCode) && date === 29) {
     return true;
   } else if (monthsWith31Days.includes(monthNumber) && date <= 31) {
     return true;
@@ -123,31 +130,40 @@ function isValidBornOrder(idCode) {
 }
 
 function isValidChecksum(idCode) {
+  let remainder, secondChRem, controlNum;
   const weightkArray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1];
   const weightkArray2 = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3];
   const splitIdCode = idCode.slice(0, 10).split('');
 
-  let arrayOfNumbers = splitIdCode.map((str) => {
-    return +str;
-  });
+  remainder = mainCheck(splitIdCode, weightkArray1);
 
-  let sum = 0;
-  for (let i = 0; i < weightkArray1.length; i++) {
-    sum += weightkArray1[i] * arrayOfNumbers[i];
-  }
-
-  let remainder = sum % 11;
   if (remainder >= 10) {
-    sum = 0;
-    for (let i = 0; i < weightkArray2.length; i++) {
-      sum += weightkArray2[i] * arrayOfNumbers[i];
-    }
-
-    if (remainder >= 10) {
-      return true;
-    }
-  } else if (remainder === +idCode[10]) {
-    return true;
+    remainder = mainCheck(splitIdCode, weightkArray2);
+    secondChRem = secondCheck(remainder);
+    return finalCheck(secondChRem, idCode);
+  } else {
+    controlNum = remainder;
+    return finalCheck(controlNum, idCode);
   }
-  return false;
+}
+
+function mainCheck(code, weight) {
+  let sum = 0;
+  for (let i = 0; i < weight.length; i++) {
+    sum += weight[i] * code[i];
+  }
+  return sum % 11;
+}
+
+function finalCheck(cNum, code) {
+  return cNum === +code[10];
+}
+
+function secondCheck(rem) {
+  if (rem >= 10) {
+    rem = 0;
+    return rem;
+  } else {
+    return rem;
+  }
 }

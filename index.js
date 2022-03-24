@@ -22,11 +22,14 @@ const displayResult = document.querySelector('.display-result');
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    if (!userInput.value) {
-      displayResult.textContent = '';
-    } else {
-      isValidIdCode(userInput.value);
-    }
+    e.stopPropagation();
+  }
+  if (!userInput.value) {
+    displayResult.textContent = '';
+  } else {
+    console.log('here')
+    isValidIdCode(userInput.value);
+    console.log(userInput.value)
   }
 });
 
@@ -40,13 +43,13 @@ function isValidIdCode(idCode) {
   const validBornOrder = isValidBornOrder(idCode);
   const validChecksum = isValidChecksum(idCode);
 
-  // console.log(length);
-  // console.log(genderNumber);
-  // console.log(validYear);
-  // console.log(validMonthNumber);
-  // console.log(validDate);
-  // console.log(validBornOrder);
-  // console.log(validChecksum);
+  console.log(length);
+  console.log(genderNumber);
+  console.log(validYear);
+  console.log(validMonthNumber);
+  console.log(validDate);
+  console.log(validBornOrder);
+  console.log(validChecksum);
 
   // console.log(convertToFullYear(idCode));
   // console.log(isLeapYear(idCode));
@@ -164,6 +167,7 @@ function secondCheck(rem) {
     rem = 0;
     return rem;
   } else {
+    console.log(rem)
     return rem;
   }
 }

@@ -22,14 +22,12 @@ const displayResult = document.querySelector('.display-result');
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    return false;
-  }
-  if (!userInput.value) {
-    displayResult.textContent = '';
-  } else {
-    console.log('here')
-    isValidIdCode(userInput.value);
-    console.log(userInput.value)
+  
+    if (!userInput.value) {
+      displayResult.textContent = '';
+    } else {
+      isValidIdCode(userInput.value);
+    }
   }
 });
 

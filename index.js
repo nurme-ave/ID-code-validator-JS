@@ -165,7 +165,6 @@ function secondCheck(rem) {
     rem = 0;
     return rem;
   } else {
-    console.log(rem)
     return rem;
   }
 }

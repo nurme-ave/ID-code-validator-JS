@@ -141,6 +141,10 @@ body {
   display: none;
 }
 
+.form input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .form input:focus {
   outline: none;
 }

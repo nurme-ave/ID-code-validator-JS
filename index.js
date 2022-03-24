@@ -22,7 +22,7 @@ const displayResult = document.querySelector('.display-result');
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    e.stopPropagation();
+    return false;
   }
   if (!userInput.value) {
     displayResult.textContent = '';

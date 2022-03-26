@@ -147,23 +147,23 @@ function isValidChecksum(idCode) {
   const weightkArray2 = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3];
   const splitIdCode = idCode.slice(0, 10).split('');
 
-  remainder = mainCheck(splitIdCode, weightkArray1);
+  remainder = getRemainder(splitIdCode, weightkArray1);
 
   if (remainder >= 10) {
-    remainder = mainCheck(splitIdCode, weightkArray2);
-    controlNum = secondCheck(remainder);
-    // return finalCheck(controlNum, idCode);
+    remainder = getRemainder(splitIdCode, weightkArray2);
+    controlNum = getRemainderSecondCheck(remainder);
   } else {
     controlNum = remainder;
   }
   return finalCheck(controlNum, idCode);
 }
 
-function mainCheck(code, weight) {
+function getRemainder(code, weight) {
   let sum = 0;
   for (let i = 0; i < weight.length; i++) {
     sum += weight[i] * code[i];
   }
+
   return sum % 11;
 }
 
@@ -171,7 +171,7 @@ function finalCheck(num, code) {
   return num === +code[10];
 }
 
-function secondCheck(rem) {
+function getRemainderSecondCheck(rem) {
   if (rem >= 10) {
     rem = 0;
   }

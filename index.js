@@ -24,8 +24,8 @@ const submitButton = document.querySelector('.submit-button');
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    return false;
   }
+  return false;
 });
 
 userInput.addEventListener('click', () => {
@@ -47,7 +47,7 @@ submitButton.addEventListener('click', (e) => {
 function isValidIdCode(idCode) {
 
   if (!isOfCorrectLength(idCode)) {
-    displayResult.textContent = 'Please check the length of the ID-code';
+    displayResult.textContent = 'Testing...Please check the length of the ID-code';
   } else {
     validate(idCode);
   }

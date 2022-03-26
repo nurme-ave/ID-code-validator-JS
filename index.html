@@ -36,12 +36,27 @@
     <section class="section-container">
 
       <div class="validator">
-        <p class="note-sm">Enter your ID-Code:</p>
-        <form class="form">
-          <label for="user-input"></label>
-          <input type="number" name="user-input" id="user-input" placeholder="Your ID-Code" required>
-        <p class="note-lg">&lt;&lt;&lt; Enter your ID-Code</p>
-        <p class="display-result"></p>
+
+        <div class="input-section">
+          <div>
+            <form class="form">
+              <label for="user-input"></label>
+              <input type="number" name="user-input" id="user-input" placeholder="Your ID-Code" required>
+          </div>
+          <p class="note"><span class="arrows">&lt;&lt;&lt;</span> Enter your ID-Code</p>
+        </div>
+
+        <div class="chevrons-down">
+          <i class="fa-solid fa-chevron-down chevron-down"></i>
+          <i class="fa-solid fa-chevron-down chevron-down"></i>
+          <i class="fa-solid fa-chevron-down chevron-down"></i>
+        </div>
+        
+        <div class="submit-section">
+          <!-- <p class="note-lg">&lt;&lt;&lt; Enter your ID-Code</p> -->
+          <button class="submit-button">Submit</button>
+          <p class="display-result">&gt;&gt;&gt;<span class="res">Result: </span><span class="dp"></span></p>
+        </div>
       </div>
 
       <hr>
@@ -51,9 +66,6 @@
         <div class="est-id-code-intro-text">
           <p>
             The Estonian identification (ID) code is a unique 11-digit code and it has a set of requirements. This app checks all these requirements step by step and makes sure that the ID-code is indeed valid.
-          </p>
-          <p>
-            Type in your Estonian ID-code and hit &apos; Enter &apos;. Our super smart robot will validate your ID-code and display the result to you below the form :)
           </p>
         </div>
       </div>

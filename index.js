@@ -17,18 +17,30 @@ navMenuItems.forEach((item) => item.addEventListener('click', clickOnNavItem));
 
 /* User Input */
 const userInput = document.getElementById('user-input');
-const displayResult = document.querySelector('.display-result');
+const displayResult = document.querySelector('.dp');
+const submitButton = document.querySelector('.submit-button');
+
 
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    if (!userInput.value) {
-      displayResult.textContent = '';
-    } else {
-      isValidIdCode(userInput.value);
-    }
+    // if (!userInput.value) {
+    //   displayResult.textContent = '';
+    // } else {
+    //   isValidIdCode(userInput.value);
+    // }
   }
 });
+
+userInput.addEventListener('click', () => {
+  displayResult.textContent = '';
+})
+
+submitButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  isValidIdCode(userInput.value);
+});
+
 
 /* Validate & Display Results */
 function isValidIdCode(idCode) {
@@ -39,7 +51,8 @@ function isValidIdCode(idCode) {
   const validDate = isValidDate(idCode);
   const validBornOrder = isValidBornOrder(idCode);
   const validChecksum = isValidChecksum(idCode);
-
+  
+  
   console.log(length);
   console.log(genderNumber);
   console.log(validYear);
@@ -61,14 +74,16 @@ function isValidIdCode(idCode) {
     validChecksum
   ) {
     console.log('All Good');
-    displayResult.textContent = 'Valid ID-code';
+    displayResult.textContent += `${userInput.value} is valid`;
   } else {
     console.log('Somethings not quite right');
-    displayResult.textContent = 'Invalid ID-code';
+    displayResult.textContent += `${userInput.value} is not valid`;
   }
+  userInput.value = '';
 }
 
 function isOfCorrectLength(idCode) {
+  console.log(+idCode);
   return idCode.length === 11;
 }
 
@@ -78,6 +93,7 @@ function isOfCorrectGenderNumber(idCode) {
 }
 
 function isValidYear(idCode) {
+  console.log(idCode);
   return 0 <= +idCode.slice(1, 3) && +idCode.slice(1, 3) <= 99;
 }
 

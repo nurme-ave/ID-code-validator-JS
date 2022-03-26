@@ -24,11 +24,7 @@ const submitButton = document.querySelector('.submit-button');
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    // if (!userInput.value) {
-    //   displayResult.textContent = '';
-    // } else {
-    //   isValidIdCode(userInput.value);
-    // }
+    return false;
   }
 });
 
@@ -38,52 +34,66 @@ userInput.addEventListener('click', () => {
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  isValidIdCode(userInput.value);
+  if (!userInput.value) {
+      displayResult.textContent = 'Please insert your ID-code';
+    } else {
+      isValidIdCode(userInput.value);
+    }
 });
+
 
 
 /* Validate & Display Results */
 function isValidIdCode(idCode) {
-  const length = isOfCorrectLength(idCode);
-  const genderNumber = isOfCorrectGenderNumber(idCode);
-  const validYear = isValidYear(idCode);
-  const validMonthNumber = isValidMonthNumber(idCode);
-  const validDate = isValidDate(idCode);
-  const validBornOrder = isValidBornOrder(idCode);
-  const validChecksum = isValidChecksum(idCode);
-  
-  
-  console.log(length);
-  console.log(genderNumber);
-  console.log(validYear);
-  console.log(validMonthNumber);
-  console.log(validDate);
-  console.log(validBornOrder);
-  console.log(validChecksum);
 
-  // console.log(convertToFullYear(idCode));
-  // console.log(isLeapYear(idCode));
-
-  if (
-    length &&
-    genderNumber &&
-    validYear &&
-    validMonthNumber &&
-    validDate &&
-    validBornOrder &&
-    validChecksum
-  ) {
-    console.log('All Good');
-    displayResult.textContent += `${userInput.value} is valid`;
+  if (!isOfCorrectLength(idCode)) {
+    displayResult.textContent = 'Please check the length of the ID-code';
   } else {
-    console.log('Somethings not quite right');
-    displayResult.textContent += `${userInput.value} is not valid`;
+    validate(idCode);
   }
-  userInput.value = '';
+}
+
+function validate(idCode) {
+    // const length = isOfCorrectLength(idCode);
+    const genderNumber = isOfCorrectGenderNumber(idCode);
+    const validYear = isValidYear(idCode);
+    const validMonthNumber = isValidMonthNumber(idCode);
+    const validDate = isValidDate(idCode);
+    const validBornOrder = isValidBornOrder(idCode);
+    const validChecksum = isValidChecksum(idCode);
+    
+    
+    // console.log(length);
+    console.log(genderNumber);
+    console.log(validYear);
+    console.log(validMonthNumber);
+    console.log(validDate);
+    console.log(validBornOrder);
+    console.log(validChecksum);
+  
+    // console.log(convertToFullYear(idCode));
+    // console.log(isLeapYear(idCode));
+  
+    if (
+      // length &&
+      genderNumber &&
+      validYear &&
+      validMonthNumber &&
+      validDate &&
+      validBornOrder &&
+      validChecksum
+    ) {
+      console.log('All Good');
+      displayResult.textContent += `${userInput.value} is valid`;
+    } else {
+      console.log('Somethings not quite right');
+      displayResult.textContent += `${userInput.value} is not valid`;
+    }
+    userInput.value = '';
 }
 
 function isOfCorrectLength(idCode) {
-  console.log(+idCode);
+  console.log(idCode.length === 11)
   return idCode.length === 11;
 }
 
@@ -93,7 +103,6 @@ function isOfCorrectGenderNumber(idCode) {
 }
 
 function isValidYear(idCode) {
-  console.log(idCode);
   return 0 <= +idCode.slice(1, 3) && +idCode.slice(1, 3) <= 99;
 }
 

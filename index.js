@@ -21,12 +21,12 @@ const displayResult = document.querySelector('.dp');
 const submitButton = document.querySelector('.submit-button');
 
 
-userInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-  }
-  return false;
-});
+// userInput.addEventListener('keydown', (e) => {
+//   if (e.key === 'Enter') {
+//     e.preventDefault();
+//   }
+//   return false;
+// });
 
 userInput.addEventListener('click', () => {
   displayResult.textContent = '';

@@ -31,10 +31,10 @@ userInput.addEventListener('click', () => {
   displayResult.textContent = '';
 })
 
-submitButton.addEventListener('click', () => {
-  // e.preventDefault();
+submitButton.addEventListener('click', (e) => {
+  e.preventDefault();
   if (!userInput.value) {
-      displayResult.textContent = 'T1...Please insert your ID-code';
+      displayResult.textContent = 'Please insert your ID-code';
     } else {
       isValidIdCode(userInput.value);
     }
@@ -46,7 +46,7 @@ submitButton.addEventListener('click', () => {
 function isValidIdCode(idCode) {
 
   if (!isOfCorrectLength(idCode)) {
-    displayResult.textContent = 'T2...Please check the length of the ID-code';
+    displayResult.textContent = 'Please check the length of the ID-code';
   } else {
     validate(idCode);
   }

@@ -21,12 +21,11 @@ const displayResult = document.querySelector('.dp');
 const submitButton = document.querySelector('.submit-button');
 
 
-// userInput.addEventListener('keydown', (e) => {
-//   if (e.key === 'Enter') {
-//     e.preventDefault();
-//   }
-//   return false;
-// });
+userInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+  }
+});
 
 userInput.addEventListener('click', () => {
   displayResult.textContent = '';
@@ -35,7 +34,7 @@ userInput.addEventListener('click', () => {
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
   if (!userInput.value) {
-      displayResult.textContent = 'T1...Please insert your ID-code';
+      displayResult.textContent = 'TEST 1...Please insert your ID-code';
     } else {
       isValidIdCode(userInput.value);
     }
@@ -47,7 +46,7 @@ submitButton.addEventListener('click', (e) => {
 function isValidIdCode(idCode) {
 
   if (!isOfCorrectLength(idCode)) {
-    displayResult.textContent = 'T2...Please check the length of the ID-code';
+    displayResult.textContent = 'TEST 2...Please check the length of the ID-code';
   } else {
     validate(idCode);
   }

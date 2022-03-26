@@ -36,24 +36,21 @@ submitButton.addEventListener('click', (e) => {
   if (!userInput.value) {
       displayResult.textContent = 'Please insert your ID-code';
     } else {
-      isValidIdCode(userInput.value);
+      isOfCorrectLength(userInput.value);
     }
 });
 
 
-
 /* Validate & Display Results */
-function isValidIdCode(idCode) {
-
-  if (!isOfCorrectLength(idCode)) {
-    displayResult.textContent = 'Please check the length of the ID-code';
+function isOfCorrectLength(idCode) {
+  if (idCode.length === 11) {
+    isValidIdCode(idCode);
   } else {
-    validate(idCode);
+    displayResult.textContent = 'Please check the length of the ID-code';
   }
 }
 
-function validate(idCode) {
-    // const length = isOfCorrectLength(idCode);
+function isValidIdCode(idCode) {
     const genderNumber = isOfCorrectGenderNumber(idCode);
     const validYear = isValidYear(idCode);
     const validMonthNumber = isValidMonthNumber(idCode);
@@ -62,7 +59,6 @@ function validate(idCode) {
     const validChecksum = isValidChecksum(idCode);
     
     
-    // console.log(length);
     console.log(genderNumber);
     console.log(validYear);
     console.log(validMonthNumber);
@@ -74,7 +70,6 @@ function validate(idCode) {
     // console.log(isLeapYear(idCode));
   
     if (
-      // length &&
       genderNumber &&
       validYear &&
       validMonthNumber &&
@@ -91,10 +86,7 @@ function validate(idCode) {
     userInput.value = '';
 }
 
-function isOfCorrectLength(idCode) {
-  console.log(idCode.length === 11)
-  return idCode.length === 11;
-}
+
 
 function isOfCorrectGenderNumber(idCode) {
   const genderNumbers = [1, 2, 3, 4, 5, 6];

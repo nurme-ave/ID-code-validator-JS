@@ -31,8 +31,8 @@ userInput.addEventListener('click', () => {
   displayResult.textContent = '';
 })
 
-submitButton.addEventListener('click', (e) => {
-  e.preventDefault();
+submitButton.addEventListener('click', () => {
+  // e.preventDefault();
   if (!userInput.value) {
       displayResult.textContent = 'TEST 1...Please insert your ID-code';
     } else {

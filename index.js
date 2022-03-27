@@ -104,7 +104,7 @@ function isLeapYear(idCode) {
     fullYear = `20${idCode.slice(1, 3)}`;
   }
 
-  return fullYear % 400 == 0 || (fullYear % 4 == 0 && fullYear % 100 != 0);
+  return fullYear % 400 === 0 || (fullYear % 4 === 0 && fullYear % 100 != 0);
 }
 
 function isValidDate(idCode) {
@@ -170,6 +170,5 @@ function getRemainderSecondCheck(rem) {
   if (rem >= 10) {
     rem = 0;
   }
-  console.log(rem);
   return rem;
 }

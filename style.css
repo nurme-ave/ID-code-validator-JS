@@ -224,8 +224,8 @@ body {
 }
 
 .display-result {
-  color: #000;
   margin: 0 0 2em;
+  color: blue;
 }
 
 hr {
@@ -398,6 +398,7 @@ footer a {
   }
 
   .display-result {
+    color: #000;
     margin: 0 0 0 0.5em;
   }
 

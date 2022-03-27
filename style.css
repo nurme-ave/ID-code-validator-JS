@@ -200,7 +200,6 @@ body {
   width: 6em;
   height: 2.5em;
   padding: 0.5em;
-  margin-bottom: 1em;
   border-radius: 0.5em;
   font-size: 1.5rem;
   font-weight: 600;
@@ -219,7 +218,7 @@ body {
   color: blue;
 }
 
-.res {
+.msg {
   display: none;
   color: #000;
 }
@@ -369,10 +368,6 @@ footer a {
     justify-content: flex-start;
   }
 
-  .submit-button {
-    margin-bottom: 0;
-  }
-
   .submit-button:hover {
     background-color: blue;
     color: #fff;
@@ -398,7 +393,7 @@ footer a {
     display: none;
   }
 
-  .res {
+  .msg {
     display: flex;
   }
 

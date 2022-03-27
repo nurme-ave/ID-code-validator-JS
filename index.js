@@ -39,7 +39,6 @@ submitButton.addEventListener('click', (e) => {
   }
 });
 
-
 /* Validation - Validating part */
 function isOfCorrectLength(idCode) {
   if (idCode.length === 11) {
@@ -171,6 +170,6 @@ function getRemainderSecondCheck(rem) {
   if (rem >= 10) {
     rem = 0;
   }
-  console.log(rem)
+  console.log(rem);
   return rem;
 }

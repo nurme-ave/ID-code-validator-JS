@@ -374,7 +374,8 @@ footer a {
   }
 
   .submit-button:hover {
-    color: blue;
+    background-color: blue;
+    color: #fff;
   }
 
   .note,

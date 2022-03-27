@@ -15,9 +15,9 @@ function clickOnNavItem() {
 }
 navMenuItems.forEach((item) => item.addEventListener('click', clickOnNavItem));
 
-/* Validation */
+/* Validation - Grab elements and add event listeners */
 const userInput = document.getElementById('user-input');
-const displayResult = document.querySelector('.dp');
+const displayResult = document.querySelector('.display-result');
 const submitButton = document.querySelector('.submit-button');
 
 userInput.addEventListener('keydown', (e) => {
@@ -39,6 +39,8 @@ submitButton.addEventListener('click', (e) => {
   }
 });
 
+
+/* Validation - Validating part */
 function isOfCorrectLength(idCode) {
   if (idCode.length === 11) {
     isValidIdCode(idCode);
@@ -55,16 +57,6 @@ function isValidIdCode(idCode) {
   const validBornOrder = isValidBornOrder(idCode);
   const validChecksum = isValidChecksum(idCode);
 
-  console.log(genderNumber);
-  console.log(validYear);
-  console.log(validMonth);
-  console.log(validDate);
-  console.log(validBornOrder);
-  console.log(validChecksum);
-
-  // console.log(convertToFullYear(idCode));
-  // console.log(isLeapYear(idCode));
-
   if (
     genderNumber &&
     validYear &&
@@ -73,10 +65,8 @@ function isValidIdCode(idCode) {
     validBornOrder &&
     validChecksum
   ) {
-    console.log('All Good');
     displayResult.textContent += `${userInput.value} is valid`;
   } else {
-    console.log('Somethings not quite right');
     displayResult.textContent += `${userInput.value} is not valid`;
   }
   userInput.value = '';
@@ -142,6 +132,12 @@ function isValidBornOrder(idCode) {
 }
 
 function isValidChecksum(idCode) {
+  /* 
+    Here's a link in Estonian how to check for the
+    valid checksum:
+    https://et.wikipedia.org/wiki/Isikukood#Kontrollnumber
+  */
+
   let remainder, controlNum;
   const weightkArray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1];
   const weightkArray2 = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3];
@@ -175,5 +171,6 @@ function getRemainderSecondCheck(rem) {
   if (rem >= 10) {
     rem = 0;
   }
+  console.log(rem)
   return rem;
 }

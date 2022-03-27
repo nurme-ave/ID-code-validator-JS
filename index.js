@@ -64,9 +64,9 @@ function isValidIdCode(idCode) {
     validBornOrder &&
     validChecksum
   ) {
-    displayResult.textContent += `${userInput.value} is valid`;
+    displayResult.textContent = `${userInput.value} is valid`;
   } else {
-    displayResult.textContent += `${userInput.value} is not valid`;
+    displayResult.textContent = `${userInput.value} is not valid`;
   }
   userInput.value = '';
 }

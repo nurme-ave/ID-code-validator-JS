@@ -33,7 +33,7 @@ userInput.addEventListener('click', () => {
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
   if (!userInput.value) {
-    displayResult.textContent = 'Please insert your ID-code';
+    displayResult.textContent = 'Please enter your ID-code';
   } else {
     isOfCorrectLength(userInput.value);
   }

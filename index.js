@@ -16,14 +16,13 @@ function clickOnNavItem() {
 navMenuItems.forEach((item) => item.addEventListener('click', clickOnNavItem));
 
 /* Validation - Grab elements and add event listeners */
+const formEl = document.querySelector('.form');
 const userInput = document.getElementById('user-input');
 const displayResult = document.querySelector('.display-result');
 const submitButton = document.querySelector('.submit-button');
 
-userInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-  }
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
 });
 
 userInput.addEventListener('click', () => {

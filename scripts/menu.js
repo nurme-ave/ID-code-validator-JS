@@ -1,6 +1,6 @@
 /* Hamburger Menu */
-const navBarToggleButton = document.querySelector('.nav-bar-toggle-button');
-const navMenu = document.querySelector('.nav-menu');
+const navBarToggleButton = document.getElementById('nav-bar-toggle-button');
+const navMenu = document.getElementById('nav-menu');
 const navMenuItems = document.querySelectorAll('.nav-menu-item');
 
 navBarToggleButton.addEventListener('click', () => {

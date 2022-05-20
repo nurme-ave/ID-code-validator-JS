@@ -1,10 +1,10 @@
 import { isOfCorrectGenderNumber, isValidYear, isValidMonth, isValidDate, isValidBornOrder, isValidChecksum } from './validate.js';
 
 /* Grab elements and add event listeners */
-const formEl = document.querySelector('.form');
+const formEl = document.getElementById('form');
 const userInput = document.getElementById('user-input');
-const displayResult = document.querySelector('.display-result');
-const submitButton = document.querySelector('.submit-button');
+const displayResult = document.getElementById('display-result');
+const submitButton = document.getElementById('submit-button');
 
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();

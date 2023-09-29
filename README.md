@@ -31,7 +31,7 @@ The page has been built with mobile-first design in mind and is fully responsive
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://nurme-ave.github.io/ID-code-validator-JS/)
+- Live Site URL: [Vercel](https://id-code-validator-js.vercel.app/)
 
 ### Built with
 
@@ -40,8 +40,4 @@ The page has been built with mobile-first design in mind and is fully responsive
 ## Author
 
 - Website - [Ave Nurme](https://www.avenurme.dev)
-- Twitter - [@ave\_nurme](https://twitter.com/ave_nurme) - Follow me doing my 3rd round of the 100DaysOfCode challenge!
-- Linkedin - [Ave Nurme](https://www.linkedin.com/in/ave-nurme)
-- YouTube - [Ave Nurme](https://www.youtube.com/channel/UC_kKIEE66Wa5bAxjqoI1A8w/videos)
 - Github - [@nurme-ave](https://github.com/nurme-ave)
-- Frontend Mentor - [@nurme-ave](https://www.frontendmentor.io/profile/nurme-ave)

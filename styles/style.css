@@ -159,6 +159,7 @@ body {
 
 .form #user-input[type='number'] {
   -moz-appearance: textfield;
+  appearance: none;
 }
 
 .form #user-input:focus {

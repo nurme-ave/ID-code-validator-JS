@@ -158,10 +158,10 @@ body {
 }
 
 .form #user-input[type='number'] {
-  -moz-appearance: textfield;
   appearance: none;
-}
+  -moz-appearance: textfield;
 
+}
 .form #user-input:focus {
   outline: none;
 }
